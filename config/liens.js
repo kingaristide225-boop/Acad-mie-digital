@@ -13,10 +13,10 @@ window.LIENS = {
   /* ---------------- PAIEMENTS ---------------- */
 
   // Paiement de l'offre à 2 900 F (bouton « Payer maintenant » de l'offre 2 900 F)
-  lien_paiement_2900: "https://dlbdgjxp.mychariow.market/prd_p8aopa4p/checkout",
+  lien_paiement_2900: "",
 
   // Paiement de l'offre à 5 900 F (bouton « Payer maintenant » de l'offre 5 900 F)
-  lien_paiement_5900: "https://chariow.ly/EWHK62MSWK/checkout",
+  lien_paiement_5900: "",
 
 
   /* ---------------- VIDÉOS YOUTUBE ---------------- */
