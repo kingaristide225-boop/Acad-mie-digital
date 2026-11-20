@@ -19,6 +19,20 @@ window.LIENS = {
   lien_paiement_5900: "https://academie-digital-07.mymaketou.shop/products/formation-complete-a-a-z-sur-la-vente-des-produits-digitaux/checkout",
 
 
+  /* ---------------- VIDÉO DE FOND (haut de la page) ---------------- */
+
+  // Vidéo qui tourne derrière le titre, sans son, en boucle.
+  // Mets ici le chemin du fichier (ex : "videos/fond.mp4") ou un lien direct vers un .mp4.
+  // Laisse vide "" pour garder le fond bleu actuel.
+  video_fond: "",
+
+  // (Facultatif) Version plus légère pour téléphone, ex : "videos/fond-mobile.mp4"
+  video_fond_mobile: "",
+
+  // (Facultatif) Image affichée pendant le chargement de la vidéo, ex : "videos/fond.jpg"
+  video_fond_image: "",
+
+
   /* ---------------- VIDÉOS YOUTUBE ---------------- */
 
   // Vidéo 1 : en haut de la page, « l'opportunité »
