@@ -16,7 +16,7 @@ window.LIENS = {
   lien_paiement_2900: "",
 
   // Paiement de l'offre à 5 900 F (bouton « Payer maintenant » de l'offre 5 900 F)
-  lien_paiement_5900: "",
+  lien_paiement_5900: "https://academie-digital-07.mymaketou.shop/products/formation-complete-a-a-z-sur-la-vente-des-produits-digitaux/checkout",
 
 
   /* ---------------- VIDÉOS YOUTUBE ---------------- */
