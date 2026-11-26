@@ -269,20 +269,12 @@ dialog.lgl[open]{display:flex;flex-direction:column}
 .payl .pm.txt{width:auto;padding:6px 12px;color:#111;font-weight:800;font-size:13px;white-space:nowrap}
 .payl{gap:10px}
 .mki{object-fit:contain;padding:0}.mki.wbg{background:#fff;padding:2px}
-/* ===== Vidéo de fond du haut de page (fichier réglé dans config/liens.js : video_fond) ===== */
-.hero .hv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity .8s ease;pointer-events:none}
-.hero.has-video .hv.on{opacity:1}
-.hero .veil{display:none}
-.hero.has-video .veil{display:block;position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,17,40,.55) 0%,rgba(7,17,40,.72) 60%,rgba(7,17,40,.9) 100%)}
-.hero.has-video .wrap{position:relative;z-index:1}
-.hero.has-video::before,.hero.has-video::after{z-index:0}
 </style>
 </head>
 <body>
 <div id="pg" aria-hidden="true"></div>
 <div id="cd" class="cd" role="timer" hidden></div>
 <header class="hero">
-  <div class="veil" aria-hidden="true"></div>
   <div class="wrap">
     <div class="top in"><span class="lg" aria-hidden="true">AD</span>Académie Digitale</div>
     <h1 class="in" style="animation-delay:.1s">Formation complète de A à Z : apprends à <span class="hl">gagner de l’argent</span> avec les produits digitaux</h1>
@@ -488,20 +480,6 @@ dialog.lgl[open]{display:flex;flex-direction:column}
 <dialog id="d"><p style="margin:0 0 16px">Ce lien n’est pas encore ajouté. Il sera branché à la prochaine étape.</p><button class="btn" id="x">Compris</button></dialog>
 
 <script src="config/liens.js"></script>
-<script>
-/* Vidéo de fond : ne se charge que si un fichier est indiqué dans config/liens.js,
-   et jamais en mode économie de données, sur connexion lente ou si le visiteur limite les animations. */
-(function(){var L=window.LIENS||{},src=(L.video_fond||'').trim(),h=document.querySelector('.hero');if(!src||!h)return;
-var c=navigator.connection||{};if(c.saveData||/(^|-)2g$/.test(c.effectiveType||''))return;
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-var m=(L.video_fond_mobile||'').trim();if(m&&window.matchMedia&&matchMedia('(max-width: 700px)').matches)src=m;
-var v=document.createElement('video');v.className='hv';v.muted=true;v.defaultMuted=true;v.loop=true;v.autoplay=true;v.playsInline=true;
-v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('aria-hidden','true');v.preload='auto';
-var p=(L.video_fond_image||'').trim();if(p)v.poster=p;
-v.addEventListener('playing',function(){v.classList.add('on')},{once:true});
-v.addEventListener('error',function(){h.classList.remove('has-video');v.remove()});
-v.src=src;h.insertBefore(v,h.firstChild);h.classList.add('has-video');var r=v.play();if(r&&r.catch)r.catch(function(){});})();
-</script>
 <script>
 /* TOUS LES LIENS DU SITE sont dans le fichier config/liens.js : pour changer un lien, ouvre ce fichier */
 const LINKS=window.LIENS||{};
