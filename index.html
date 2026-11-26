@@ -274,38 +274,12 @@ dialog.lgl[open]{display:flex;flex-direction:column}
 .offer .btn{font-size:20px;font-weight:800;padding:20px 26px;border-radius:16px;letter-spacing:.2px}
 .offer .btn.paynow{width:100%;margin:6px 0 24px;font-size:22px;padding:22px 26px}
 .offers .offer .btn.paynow{margin-top:6px}
-/* ===== Haut de page : photo du formateur en arrière-plan + bandeau en coin ===== */
-.hero.has-photo{background:#05080F}
-.hero.has-photo::before,.hero.has-photo::after{z-index:0}
-.hbg{position:absolute;top:0;right:0;bottom:0;width:60%;z-index:0;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%);mask-image:linear-gradient(90deg,transparent 0%,#000 38%)}
-.hbg img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.hbg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#05080F 0%,rgba(5,8,15,.75) 22%,rgba(5,8,15,0) 55%),linear-gradient(0deg,#05080F 0%,rgba(5,8,15,0) 32%),radial-gradient(60% 55% at 62% 40%,rgba(47,107,235,.18),transparent 70%)}
-.hero.has-photo .wrap{position:relative;z-index:1}
-.hero.has-photo .ring{display:none}
-@media (min-width:900px){.hero.has-photo .wrap{max-width:1200px;padding:0 48px}.hero.has-photo h1{max-width:12.5ch}.hero.has-photo p{max-width:36ch}.hero.has-photo .hs{max-width:560px}.hbg{width:52%}}
-.hero.has-photo h1{text-shadow:0 4px 30px rgba(0,0,0,.55)}
-.corner{position:absolute;z-index:2;right:-150px;bottom:110px;width:620px;transform:rotate(-38deg);overflow:hidden;padding:12px 0;background:linear-gradient(90deg,#1E50C8,#2F6BEB 40%,#4C8DFF);box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 40px rgba(47,107,235,.45);border-top:1px solid rgba(255,255,255,.35);border-bottom:1px solid rgba(255,255,255,.2);pointer-events:none}
-.corner .track{display:flex;width:max-content;animation:cmarq 16s linear infinite}
-.corner .track>div{display:flex;align-items:center;flex:none}
-.corner span{font:800 15px var(--font);letter-spacing:2px;text-transform:uppercase;color:#fff;white-space:nowrap;padding:0 14px}
-.corner i{font-style:normal;color:#BBD4FF;font-size:13px}
-@keyframes cmarq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.corner .track{animation:none}}
-@media (max-width:899px){
-  .hbg{left:0;width:100%;bottom:auto;height:min(118vw,560px);-webkit-mask-image:none;mask-image:none}
-  .hbg::after{background:linear-gradient(0deg,#05080F 0%,#05080F 4%,rgba(5,8,15,.35) 42%,rgba(5,8,15,0) 70%),linear-gradient(180deg,rgba(5,8,15,.55) 0%,rgba(5,8,15,0) 22%)}
-  .hero.has-photo{padding-top:calc(min(104vw,500px) + env(safe-area-inset-top,0px))}
-  .hero.has-photo .top{display:none}
-  .corner{left:-10%;right:auto;width:120%;top:calc(min(84vw,404px) + env(safe-area-inset-top,0px));bottom:auto;padding:9px 0;transform:rotate(-5deg)}
-  .corner span{font-size:12px;letter-spacing:1.5px;padding:0 10px}
-}
 </style>
 </head>
 <body>
 <div id="pg" aria-hidden="true"></div>
 <div id="cd" class="cd" role="timer" hidden></div>
-<header class="hero has-photo">
-  <div class="hbg"><picture><source srcset="images/bouo-aristide.webp" type="image/webp"><img src="images/bouo-aristide.jpg" width="760" height="789" alt="Bouo Aristide, ton formateur" fetchpriority="high"></picture></div>
+<header class="hero">
   <div class="wrap">
     <div class="top in"><span class="lg" aria-hidden="true">AD</span>Académie Digitale</div>
     <h1 class="in" style="animation-delay:.1s">Formation complète de A à Z : apprends à <span class="hl">gagner de l’argent</span> avec les produits digitaux</h1>
@@ -314,7 +288,6 @@ dialog.lgl[open]{display:flex;flex-direction:column}
     <ul class="hs in" style="animation-delay:.45s"><li>4 h de vidéo</li><li>5 modules</li><li>Accompagnement jusqu’à ta 1ère vente</li><li>Plus de 35 personnes suivent la formation</li></ul>
   </div>
   <div class="ring" aria-hidden="true"></div>
-  <div class="corner" aria-hidden="true"><div class="track"><div><span>Bouo Aristide</span><i>✦</i><span>Ton formateur</span><i>✦</i><span>2,3&nbsp;M&nbsp;F de ventes</span><i>✦</i><span>+ de 2&nbsp;900 clients</span><i>✦</i></div><div><span>Bouo Aristide</span><i>✦</i><span>Ton formateur</span><i>✦</i><span>2,3&nbsp;M&nbsp;F de ventes</span><i>✦</i><span>+ de 2&nbsp;900 clients</span><i>✦</i></div></div></div>
 </header>
 
 <main>
