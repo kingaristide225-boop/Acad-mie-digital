@@ -274,47 +274,47 @@ dialog.lgl[open]{display:flex;flex-direction:column}
 .offer .btn{font-size:20px;font-weight:800;padding:20px 26px;border-radius:16px;letter-spacing:.2px}
 .offer .btn.paynow{width:100%;margin:6px 0 24px;font-size:22px;padding:22px 26px}
 .offers .offer .btn.paynow{margin-top:6px}
-/* ===== Haut de page avec la photo du formateur ===== */
-.hgrid{max-width:1120px;display:grid;gap:44px;align-items:center}
-.by{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-size:15px;color:#CFE0FA;line-height:1.35}
-.by img{width:44px;height:44px;flex:none;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid #4C8DFF;box-shadow:0 0 0 4px rgba(76,141,255,.18)}
-.by b{color:#fff}
-.coach{margin:0 auto;position:relative;width:100%;max-width:400px}
-.coach::before{content:"";position:absolute;inset:8% -6% -4% -6%;border-radius:40px;background:radial-gradient(closest-side,rgba(47,107,235,.55),transparent);filter:blur(30px);z-index:-1}
-.coach .ph{position:relative;padding:2px;border-radius:30px;background:linear-gradient(160deg,#7FAEFF,rgba(255,255,255,.08) 45%,#2F6BEB);box-shadow:0 30px 70px rgba(0,0,0,.55)}
-.coach .ph img{display:block;width:100%;height:auto;aspect-ratio:760/789;object-fit:cover;object-position:50% 18%;border-radius:28px}
-.coach .ph::after{content:"";position:absolute;inset:2px;border-radius:28px;background:linear-gradient(180deg,transparent 55%,rgba(5,10,24,.85));pointer-events:none}
-.coach figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:14px 16px;border-radius:18px;background:rgba(10,18,40,.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14)}
-.coach figcaption b{display:flex;align-items:center;gap:7px;font-size:19px;font-weight:800;color:#fff}
-.coach figcaption svg{width:19px;height:19px}
-.coach figcaption span{display:block;margin-top:2px;font-size:14px;color:#A9C2EE}
-.coach .stat{position:absolute;top:22px;right:-12px;padding:10px 14px;border-radius:16px;background:#fff;color:#0A1228;box-shadow:0 14px 34px rgba(0,0,0,.35);text-align:left;line-height:1.15}
-.coach .stat b{display:block;font-size:20px;font-weight:800;color:#1E50C8}
-.coach .stat span{font-size:12px;font-weight:600;color:#51627F}
-@media (max-width:899px){.coach .stat{right:10px}}
-@media (min-width:900px){.hgrid{grid-template-columns:1.2fr .8fr;gap:56px}.by{display:none}.coach{max-width:420px}}
+/* ===== Haut de page : photo du formateur en arrière-plan + bandeau en coin ===== */
+.hero.has-photo{background:#05080F}
+.hero.has-photo::before,.hero.has-photo::after{z-index:0}
+.hbg{position:absolute;top:0;right:0;bottom:0;width:60%;z-index:0;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%);mask-image:linear-gradient(90deg,transparent 0%,#000 38%)}
+.hbg img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.hbg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#05080F 0%,rgba(5,8,15,.75) 22%,rgba(5,8,15,0) 55%),linear-gradient(0deg,#05080F 0%,rgba(5,8,15,0) 32%),radial-gradient(60% 55% at 62% 40%,rgba(47,107,235,.18),transparent 70%)}
+.hero.has-photo .wrap{position:relative;z-index:1}
+.hero.has-photo .ring{display:none}
+@media (min-width:900px){.hero.has-photo .wrap{max-width:1200px;padding:0 48px}.hero.has-photo h1{max-width:12.5ch}.hero.has-photo p{max-width:36ch}.hero.has-photo .hs{max-width:560px}.hbg{width:52%}}
+.hero.has-photo h1{text-shadow:0 4px 30px rgba(0,0,0,.55)}
+.corner{position:absolute;z-index:2;right:-150px;bottom:110px;width:620px;transform:rotate(-38deg);overflow:hidden;padding:12px 0;background:linear-gradient(90deg,#1E50C8,#2F6BEB 40%,#4C8DFF);box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 40px rgba(47,107,235,.45);border-top:1px solid rgba(255,255,255,.35);border-bottom:1px solid rgba(255,255,255,.2);pointer-events:none}
+.corner .track{display:flex;width:max-content;animation:cmarq 16s linear infinite}
+.corner .track>div{display:flex;align-items:center;flex:none}
+.corner span{font:800 15px var(--font);letter-spacing:2px;text-transform:uppercase;color:#fff;white-space:nowrap;padding:0 14px}
+.corner i{font-style:normal;color:#BBD4FF;font-size:13px}
+@keyframes cmarq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.corner .track{animation:none}}
+@media (max-width:899px){
+  .hbg{left:0;width:100%;bottom:auto;height:min(118vw,560px);-webkit-mask-image:none;mask-image:none}
+  .hbg::after{background:linear-gradient(0deg,#05080F 0%,#05080F 4%,rgba(5,8,15,.35) 42%,rgba(5,8,15,0) 70%),linear-gradient(180deg,rgba(5,8,15,.55) 0%,rgba(5,8,15,0) 22%)}
+  .hero.has-photo{padding-top:calc(min(104vw,500px) + env(safe-area-inset-top,0px))}
+  .hero.has-photo .top{display:none}
+  .corner{left:-10%;right:auto;width:120%;top:calc(min(84vw,404px) + env(safe-area-inset-top,0px));bottom:auto;padding:9px 0;transform:rotate(-5deg)}
+  .corner span{font-size:12px;letter-spacing:1.5px;padding:0 10px}
+}
 </style>
 </head>
 <body>
 <div id="pg" aria-hidden="true"></div>
 <div id="cd" class="cd" role="timer" hidden></div>
-<header class="hero">
-  <div class="wrap hgrid">
-  <div class="htext">
+<header class="hero has-photo">
+  <div class="hbg"><picture><source srcset="images/bouo-aristide.webp" type="image/webp"><img src="images/bouo-aristide.jpg" width="760" height="789" alt="Bouo Aristide, ton formateur" fetchpriority="high"></picture></div>
+  <div class="wrap">
     <div class="top in"><span class="lg" aria-hidden="true">AD</span>Académie Digitale</div>
-    <div class="by in"><img src="images/bouo-aristide.jpg" alt="" width="44" height="44"><span>Une formation de <b>Bouo Aristide</b>, entrepreneur digital</span></div>
     <h1 class="in" style="animation-delay:.1s">Formation complète de A à Z : apprends à <span class="hl">gagner de l’argent</span> avec les produits digitaux</h1>
     <p class="in" style="animation-delay:.2s">Crée, lance et vends tes produits digitaux sur Internet, étape par étape, même si tu débutes.</p>
     <a class="btn in" style="animation-delay:.3s" href="#opportunite">Découvrir la formation</a>
     <ul class="hs in" style="animation-delay:.45s"><li>4 h de vidéo</li><li>5 modules</li><li>Accompagnement jusqu’à ta 1ère vente</li><li>Plus de 35 personnes suivent la formation</li></ul>
   </div>
-  <figure class="coach in" style="animation-delay:.25s">
-    <div class="ph"><picture><source srcset="images/bouo-aristide.webp" type="image/webp"><img src="images/bouo-aristide.jpg" width="760" height="789" alt="Bouo Aristide, ton formateur" fetchpriority="high"></picture></div>
-    <div class="stat"><b>2,3&nbsp;M&nbsp;F</b><span>de ventes sur ma boutique</span></div>
-    <figcaption><b>Bouo Aristide <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#2F6BEB"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span>Ton formateur · Plus de 2&nbsp;900 clients</span></figcaption>
-  </figure>
-  </div>
   <div class="ring" aria-hidden="true"></div>
+  <div class="corner" aria-hidden="true"><div class="track"><div><span>Bouo Aristide</span><i>✦</i><span>Ton formateur</span><i>✦</i><span>2,3&nbsp;M&nbsp;F de ventes</span><i>✦</i><span>+ de 2&nbsp;900 clients</span><i>✦</i></div><div><span>Bouo Aristide</span><i>✦</i><span>Ton formateur</span><i>✦</i><span>2,3&nbsp;M&nbsp;F de ventes</span><i>✦</i><span>+ de 2&nbsp;900 clients</span><i>✦</i></div></div></div>
 </header>
 
 <main>
